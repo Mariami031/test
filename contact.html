@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>კონტაქტი — TBGI Academy</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif Georgian", serif;
+      background-color: #f9f9f9;
+    }
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 80px;
+  background-color: #050f2e;
+  box-shadow: 0 12px 10px rgba(110, 24, 24, 0.15); 
+}
+
+    .brand-name a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name a:hover,
+    .info-bar a:hover {
+      color: orange;
+    }
+
+    .info-bar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .info-bar a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      margin-left: 20px;
+      white-space: nowrap;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+      position: absolute;
+      right: 25px;
+      z-index: 20;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .social-icons a {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      color: #000;
+      font-size: 18px;
+      margin: 0 8px;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      background: orange;
+      color: #fff;
+      border-color: orange;
+    }
+
+    .contact-info {
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    .contact-info p {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      word-break: break-word;
+    }
+    .contact-info i {
+      color: orange;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .map {
+      margin-bottom: 20px;
+    }
+    .map iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      width: 100%;
+      background-color: #050f2e;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      color: orange;
+    }
+
+    @media (max-width: 990px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .info-bar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        
+        padding: 15px 0;
+        border-radius: 10px;
+      }
+
+      .info-bar.active {
+        display: flex;
+      }
+
+      .info-bar a {
+        margin: 10px 0;
+        font-size: 14px;
+        margin-left: 0;
+        white-space: normal;
+        padding-left: 20px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="brand-name">
+      <a href="index.html">
+        <span class="brand-icon">🎓</span>
+        TBGI Academy
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="მენიუს გახსნა">&#9776;</button>
+    <div class="info-bar" id="info-bar">
+      <a href="about.html">შესახებ</a>
+      <a href="info.html">გაკვეთილები</a>
+      <a href="courses.html">კურსები</a>
+      <a href="art.html">ხელოვნება</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="contact.html">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>კონტაქტი</h1>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078&sk=about" target="_blank"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@t_bgiacademy" target="_blank"
+        ><i class="fab fa-tiktok"></i
+      ></a>
+    </div>
+
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> მიხეილ იპოლიტოვ-ივანოვის ქუჩა 10, Tbilisi, Georgia, 0153</p>
+      <p><i class="fas fa-phone"></i> 574 55 33 05</p>
+      <p><i class="fab fa-whatsapp"></i> +995 574 55 33 05</p>
+      <p><i class="fas fa-envelope"></i> tbgiacademy@gmail.com</p>
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.3705646096882!2d44.80255437590048!3d41.79493757125103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40446c3411ab5b4d%3A0x2e4085c3d37ffc1!2s10%20Mikheil%20Ipolitov-Ivanovi%20St%2C%20T&#39;bilisi!5e1!3m2!1sen!2sge!4v1754767272781!5m2!1sen!2sge"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 TBGI Academy. ყველა უფლება დაცულია.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078#" target="_blank"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank ">Instagram</a>
+      <a href="https://www.tiktok.com/@t_bgiacademy" target="_blank">Tik Tok</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const infoBar = document.getElementById("info-bar");
+    hamburger.addEventListener("click", () => {
+      infoBar.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ხელოვნება - TBGI Academy</title>
+    <link rel="stylesheet" href="art.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="brand-name">
+      <a href="index.html">
+        <span class="brand-icon">🎓</span>
+        TBGI Academy
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="მენიუს გახსნა">&#9776;</button>
+
+    <div class="info-bar" id="info-bar">
+      <a href="about.html" aria-current="page">შესახებ</a>
+      <a href="info.html">გაკვეთილები</a>
+      <a href="courses.html">კურსები</a>
+      <a href="art.html">ხელოვნება</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="contact.html">კონტაქტი</a>
+    </div>
+  </nav>
+
+
+    <header class="header">
+        <h1>🎨 ხელოვნების სერვისები</h1>
+    </header>
+
+    <main>
+        <section class="service">
+            <i class="fas fa-guitar icon"></i>
+            <h2>გიტარა</h2>
+            <span class="price">₾140</span>
+        </section>
+
+        <section class="service">
+            <i class="fa-solid fa-church icon"></i>
+            <h2>გალობა</h2>
+    
+            <span class="price">₾140</span>
+        </section>
+                <section class="service">
+            <i class="fas fa-music  icon"></i>
+            <h2>ფანდური</h2>
+            
+            <span class="price">₾140</span>
+        </section>
+
+        <section class="service">
+           <i class="fas fa-music  icon"></i>
+            <h2>ფოლკლორი</h2>
+            <span class="price">₾140</span>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TBGI Academy. ყველა უფლება დაცულია.</p>
+        <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078#" target="_blank"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank ">Instagram</a>
+      <a href="https://www.tiktok.com/@t_bgiacademy" target="_blank">Tik Tok</a>
+    </footer>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const infoBar = document.getElementById("info-bar");
+
+    hamburger.addEventListener("click", () => {
+      infoBar.classList.toggle("active");
+    });
+  </script>
+</body>
+<style>
+    body {
+      margin: 0;
+      font-family: "Noto Serif Georgian", serif;
+      background-color: #f9f9f9;
+    }
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 80px;
+  background-color: #050f2e;
+  box-shadow: 0 12px 10px rgba(110, 24, 24, 0.15); 
+}
+
+    .brand-name a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name a:hover,
+    .info-bar a:hover {
+      color: orange;
+    }
+
+    .info-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .info-bar a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      margin-left: 20px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #f06595);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .service {
+            background: white;
+            width: 280px;
+            margin: 15px;
+            padding: 20px 60px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+        }
+
+        .icon {
+            font-size: 40px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #f06595;
+        }
+
+      
+        footer {
+            background-color: #050f2e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials a {
+            margin: 0 10px;
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            color: orange;
+        }
+          .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .info-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .info-bar a {
+        margin-left: 0;
+        font-size: 14px;
+      }
+
+      .hamburger {
+        display: block;
+        position: absolute;
+        
+        right: 25px;
+        z-index: 20;
+      }
+
+      .info-bar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+       
+        padding: 15px 0;
+        border-radius: 10px;
+      }
+
+      .info-bar.active {
+        display: flex;
+      }
+
+      .info-bar a {
+        margin: 10px 0;
+      }
+      .container{
+        max-width: 70%;
+      }
+      .header h1{
+        font-size: 20px;
+      }
+     .h2{
+      font-size: 8px;
+     }
+    }
+</style>
+</html>

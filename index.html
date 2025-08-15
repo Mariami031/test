@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TBGI Academy - მთავარი</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Serif Georgian", serif;
+      background-color: #f9f9f9;
+    }
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 80px;
+  background-color: #050f2e;
+  box-shadow: 0 12px 10px rgba(110, 24, 24, 0.15); 
+}
+
+
+ 
+    
+
+    .brand-name a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name a:hover,
+    .info-bar a:hover {
+      color: orange;
+    }
+
+    .info-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .info-bar a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      margin-left: 20px;
+    }
+
+    .active-link {
+      color: orange;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+      position: absolute;
+      
+      right: 25px;
+      z-index: 20;
+    }
+
+    .main-info {
+      background-color: rgba(223, 223, 202, 0.438);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .main-info-text h3 {
+      margin: 0 0 30px 0;
+      font-size: 22px;
+      font-weight: normal;
+      line-height: 1.6;
+    }
+
+    .main-info-img img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .why-tbgi, .courses, .testimonials, .cta, footer {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .why-tbgi h2,
+    .courses h2,
+    .testimonials h2,
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .benefits, .course-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .benefit, .course {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 220px;
+    }
+
+    .benefit span {
+      font-size: 30px;
+    }
+
+    .register-btn {
+      background-color: orange;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .register-btn:hover {
+      background-color: darkorange;
+    }
+
+    footer {
+      background-color: #050f2e;
+      color: #f0f0f0;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: orange;
+    }
+
+    .package-offers {
+  max-width: 600px;
+  margin: 40px auto 60px auto;
+  padding: 25px 20px;
+  font-family: "Noto Serif Georgian", serif;
+  background: linear-gradient(145deg, rgb(178, 226, 192), rgb(144, 190, 167));
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.package-offers h2 {
+  font-weight: 800;
+  font-size: 26px;
+  color: #b32035;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.package-offers ul {
+  padding: 0;
+  margin: 0 0 25px 0;
+  list-style: none;
+}
+
+.package-offers ul li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: rgba(202, 227, 200, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.package-offers ul li:hover {
+  
+  transform: translateY(-2px);
+}
+
+.package-offers ul li span {
+  color: #d63447;
+  font-weight: 700;
+}
+
+.package-offers p {
+  font-size: 16px;
+  text-align: center;
+  margin: 8px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.package-offers p strong {
+  color: #d63447;
+  font-weight: 800;
+}
+
+    @media (max-width: 990px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .info-bar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+       
+        padding: 15px 0;
+        border-radius: 10px;
+      }
+
+      .info-bar.active {
+        display: flex;
+      }
+
+      .info-bar a {
+        margin: 10px 0;
+        font-size: 14px;
+        margin-left: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .main-info-img img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .main-info-text h3 {
+        font-size: 18px;
+      }
+
+      .benefits, .course-list {
+        gap: 15px;
+      }
+  .package-offers {
+    padding: 15px 17px;  
+    margin: 15px 20px;   
+  }
+
+  .package-offers h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .package-offers ul li {
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .package-offers p {
+    font-size: 13px;
+  }
+    }
+    
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="brand-name">
+      <a href="index.html">
+        <span class="brand-icon">🎓</span>
+        TBGI Academy
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="მენიუს გახსნა">&#9776;</button>
+
+    <div class="info-bar" id="info-bar">
+      <a href="about.html">შესახებ</a>
+      <a href="info.html">გაკვეთილები</a>
+      <a href="courses.html">კურსები</a>
+      <a href="art.html">ხელოვნება</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="contact.html">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <div class="main-info">
+    <div class="main-info-text">
+      <h3>
+        ისწავლე სხვანაირად - მიაღწიე მეტს!<br />
+        სწავლა აღარ არის რუტინა - აქ ის განვითარებაა!<br />
+        აღმოაჩინე შენი პოტენციალი TBGI Academy -სთან ერთად!
+      </h3>
+    </div>
+    <div class="main-info-img">
+      <img src="TBGI.jpg" alt="TBGI Academy Logo" />
+    </div>
+  </div>
+
+  <div class="why-tbgi">
+    <h2>რატომ TBGI Academy?</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <span>📚</span>
+        <p>ინოვაციური სწავლების მეთოდები</p>
+      </div>
+      <div class="benefit">
+        <span>🧠</span>
+        <p>პერსონალური განვითარება და მენტორობა</p>
+      </div>
+      <div class="benefit">
+        <span>🏫</span>
+        <p>ფიზიკური სწავლის გარემო<br />მყუდრო და ინსპირაციული სივრცეში</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-tbgi">
+    <h2>კურსები</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <span>📐</span>
+        <p>მათემატიკა (სასკოლო და აბიტურიენტებისათვის)</p>
+      </div>
+      <div class="benefit">
+        <span>📝</span>
+        <p>ქართული (სასკოლო და აბიტურიენტებისათვის)</p>
+      </div>
+      <div class="benefit">
+        <img src="https://flagcdn.com/w40/gb.png" alt="Great Britain Flag" width="40" height="30" />
+        <p>ინგლისური (სასკოლო და აბიტურიენტებისათვის)</p>
+      </div>
+      <div class="benefit">
+        <img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" width="40" height="30" />
+        <p>რუსული (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" width="40" height="30" />
+        <p>გერმანული (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>⚛️</span>
+        <p>ფიზიკა (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>🧬</span>
+        <p>ბიოლოგია (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>⚗️</span>
+        <p>ქიმია (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>🏛️</span>
+        <p>ისტორია (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>🌍</span>
+        <p>გეოგრაფია (სასკოლო)</p>
+      </div>
+      <div class="benefit">
+        <span>🚚</span>
+        <p>ლოჯისტიკა და საერთაშორისო გადაზიდვები</p>
+      </div>
+        <div class="benefit">
+        <span>📝</span>
+        <p>წერის ვორკშოპი</p>
+      </div>
+      <div class="benefit">
+        <span>🎸</span>
+        <p>გიტარა</p>
+      </div>
+      <div class="benefit">
+        <span>🎵</span>
+        <p>ფანდური</p>
+      </div>
+      <div class="benefit">
+        <span>🎶</span>
+        <p>ფოლკლორი</p>
+      </div>
+      <div class="benefit">
+        <span>🎶</span>
+        <p>გალობა</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="package-offers">
+    <h2>პაკეტური შეთავაზება</h2>
+    <ul>
+      <li>2 საგანი ერთად - <span>10% ფასდაკლება</span></li>
+      <li>3 საგანი ერთად - <span>15% ფასდაკლება</span></li>
+      <li>4 საგანი (სრული პაკეტი) - <span>20% ფასდაკლება</span></li>
+    </ul>
+    <p><strong>ფასდაკლება 10%</strong> დედმამიშვილზე</p>
+    <p><strong>ფასდაკლება 40%</strong> სოციალურად დაუცველ მოსწავლეზე (ჯგუფში ერთი)</p>
+  </section>
+
+  <div class="cta">
+    <h2>დაიწყე სწავლა დღესვე!</h2>
+    <a href="register.html" class="register-btn">რეგისტრაცია</a>
+  </div>
+
+  <footer>
+    <p>© 2025 TBGI Academy. ყველა უფლება დაცულია.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078#" target="_blank"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank ">Instagram</a>
+      <a href="https://www.tiktok.com/@t_bgiacademy" target="_blank">Tik Tok</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const infoBar = document.getElementById("info-bar");
+
+    hamburger.addEventListener("click", () => {
+      infoBar.classList.toggle("active");
+    });
+
+    
+  </script>
+</body>
+</html>

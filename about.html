@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>შესახებ - TBGI Academy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Serif Georgian", serif;
+      background-color: #f9f9f9;
+    }
+
+   
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 80px;
+  background-color: #050f2e;
+  box-shadow: 0 12px 10px rgba(110, 24, 24, 0.15); 
+}
+
+    .brand-name a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name a:hover,
+    .info-bar a:hover {
+      color: orange;
+    }
+
+    .info-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .info-bar a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      margin-left: 20px;
+    }
+
+    
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+
+    footer {
+      background-color: #050f2e;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 20px 0;
+      font-family: "Noto Serif Georgian", serif;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: orange;
+    }
+
+   
+    @media (max-width: 600px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .info-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .info-bar a {
+        margin-left: 0;
+        font-size: 14px;
+      }
+
+      
+      .hamburger {
+        display: block;
+        position: absolute;
+        
+        right: 25px;
+        z-index: 20;
+      }
+
+    
+      .info-bar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 15px 0;
+        border-radius: 10px;
+      }
+
+    
+      .info-bar.active {
+        display: flex;
+      }
+
+      .info-bar a {
+        margin: 10px 0;
+      }
+      .container{
+        max-width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="brand-name">
+      <a href="index.html">
+        <span class="brand-icon">🎓</span>
+        TBGI Academy
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="მენიუს გახსნა">&#9776;</button>
+
+    <div class="info-bar" id="info-bar">
+      <a href="about.html" aria-current="page">შესახებ</a>
+      <a href="info.html">გაკვეთილები</a>
+      <a href="courses.html">კურსები</a>
+      <a href="art.html">ხელოვნება</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="contact.html">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>შესახებ</h1>
+    <p>
+      TBGI Academy შეიქმნა იდეით — დავანგრიოთ ტრადიციული, დამქანცველი სწავლების
+      ჩარჩოები და შევთავაზოთ ახალგაზრდებს სრულიად ახალი, ინსპირაციული გარემო,
+      სადაც სწავლა ნიშნავს პიროვნულ ზრდას და რეალურ პროგრესს.
+    </p>
+
+    <h2>ჩვენი მისია</h2>
+    <p>
+      TBGI Academy-ის მიზანია შექმნას განათლების ისეთი სივრცე, რომელიც შთააგონებს,
+      აღვივებს ცნობისმოყვარეობას და აძლევს მოტივაციას თითოეულ მოსწავლეს, ისწავლოს
+      თავისი ტემპით — მაგრამ მაქსიმალური შედეგით.
+    </p>
+
+    <h2>რას ვთავაზობთ</h2>
+    <p>
+      ჩვენ გთავაზობთ მხოლოდ ფიზიკურ კურსებს, რომელიც იდეალურადაა
+      მორგებული კონცენტრირებასა და შინაარსობრივ განვითარებაზე. ყველა კურსი აგებულია
+      პრაქტიკაზე, კომუნიკაციაზე და თანამედროვე მოთხოვნებზე.
+    </p>
+
+    <h2>რატომ TBGI?</h2>
+    <p>
+      ჩვენ არ ვართ ჩვეულებრივი სასწავლო ცენტრი. აქ მოსწავლე არ არის მხოლოდ მსმენელი
+      — ის არის შემოქმედი, მკვლევარი და საკუთარი მიმართულების არქიტექტორი. ჩვენი
+      გუნდი აერთიანებს პროფესიონალებს, რომლებსაც გულწრფელად სჯერათ განათლების
+      ძალის.
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 TBGI Academy. ყველა უფლება დაცულია.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078#" target="_blank"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank ">Instagram</a>
+      <a href="https://www.tiktok.com/@t_bgiacademy" target="_blank">Tik Tok</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const infoBar = document.getElementById("info-bar");
+
+    hamburger.addEventListener("click", () => {
+      infoBar.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

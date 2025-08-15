@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>გაკვეთილები - TBGI Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif Georgian", serif;
+      background-color: #f9f9f9;
+    }
+
+  .nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 80px;
+  background-color: #050f2e;
+  box-shadow: 0 12px 10px rgba(110, 24, 24, 0.15); 
+}
+
+    .brand-name a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name a:hover,
+    .info-bar a:hover {
+      color: orange;
+    }
+
+    .info-bar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .info-bar a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      margin-left: 20px;
+      white-space: nowrap; 
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+      position: absolute;
+      right: 25px;
+      z-index: 20;
+    }
+
+    footer {
+      background-color: #050f2e;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 20px 0;
+      font-family: "Noto Serif Georgian", serif;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: orange;
+    }
+
+    .course-list {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .course-list h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #34495e;
+    }
+
+    .course {
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: nowrap; 
+      width: 100%;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+      overflow-wrap: break-word; 
+      word-break: break-word;
+    }
+
+    .course:hover {
+      transform: translateY(-3px);
+    }
+
+    .course span {
+      flex-shrink: 0;
+      font-size: 36px;
+      width: 50px;
+      min-width: 50px;
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .course img {
+      width: 50px;
+      height: auto;
+      flex-shrink: 0;
+      border-radius: 5px;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+
+    .course > div {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .course h2 {
+      margin: 0 0 5px 0;
+      font-size: 20px;
+      color: #2c3e50;
+      word-break: break-word;
+    }
+
+    .course p {
+      margin: 0 0 8px 0;
+      color: #555;
+      word-break: break-word;
+    }
+
+    .course strong {
+      color: #2980b9;
+    }
+
+  
+    @media (max-width: 990px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .info-bar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      
+        padding: 15px 0;
+        border-radius: 10px;
+      }
+
+      .info-bar.active {
+        display: flex;
+      }
+
+      .info-bar a {
+        margin: 10px 0;
+        font-size: 14px;
+        margin-left: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+     
+      .course {
+        flex-wrap: wrap; 
+        flex-direction: row; 
+        align-items: center;
+        padding: 15px;
+      }
+
+
+      .course span,
+      .course img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+      }
+
+      .course > div {
+        flex-basis: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="brand-name">
+      <a href="index.html">
+        <span class="brand-icon">🎓</span>
+        TBGI Academy
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="მენიუს გახსნა">&#9776;</button>
+
+    <div class="info-bar" id="info-bar">
+      <a href="about.html">შესახებ</a>
+      <a href="info.html">გაკვეთილები</a>
+      <a href="courses.html">კურსები</a>
+      <a href="art.html">ხელოვნება</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="contact.html">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <main class="course-list">
+    <h1>სასწავლო კურსების პირობები</h1>
+
+    <h4 style="color:rgb(196, 47, 47)"><strong> თითოეული გაკვეთილი ტარდება კვირაში 2-ჯერ და ხანგრძლივობა არის 1 საათი და 15 წუთი.</strong></h4>
+
+    <div class="course">
+      <span>📐</span>
+      <div>
+        <h2>მათემატიკა</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 140₾ / თვე</strong>
+      </div>
+    </div>
+    <div class="course">
+      <span>📐</span>
+      <div>
+        <h2>მათემატიკა აბიტურიენტებისათვის</h2>
+        
+
+        <strong>ფასი: 180₾ / თვე</strong>
+      </div>
+    </div>
+    <div class="course">
+      <span>📝</span>
+      <div>
+        <h2>ქართული</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 130₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>📝</span>
+      <div>
+        <h2>ქართული აბიტურიენტებისათვის</h2>
+      
+        <strong>ფასი: 160₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Great Britain Flag" />
+      <div>
+        <h2>ინგლისური (ENG)</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 130₾ / თვე</strong>
+      </div>
+    </div>
+
+     <div class="course">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Great Britain Flag" />
+      <div>
+        <h2>ინგლისური (ENG)</h2>
+        <p>აბიტურიენტებისთვის</p>
+        <strong>ფასი: 150₾ / თვე</strong>
+      </div>
+    </div>
+
+     <div class="course">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Great Britain Flag" />
+      <div>
+        <h2>ინგლისური (ENG)</h2>
+        <p>სასაუბრო, უცხოელ პედაგოგთან</p>
+        <strong>ფასი: 150₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" />
+      <div>
+        <h2>რუსული (RUS)</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 120₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" />
+      <div>
+        <h2>გერმანული (DE)</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 120₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>⚛️</span>
+      <div>
+        <h2>ფიზიკა</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 130₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>🧬</span>
+      <div>
+        <h2>ბიოლოგია</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 100₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>⚗️</span>
+      <div>
+        <h2>ქიმია</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 120₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>🏛️</span>
+      <div>
+        <h2>ისტორია</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 100₾ / თვე</strong>
+      </div>
+    </div>
+
+    <div class="course">
+      <span>🌍</span>
+      <div>
+        <h2>გეოგრაფია</h2>
+        <p>სასკოლო</p>
+        <strong>ფასი: 100₾ / თვე</strong>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 TBGI Academy. ყველა უფლება დაცულია.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579078410078#" target="_blank"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/tbgiacademy?igsh=MWxlbHV5cjVzb3ZqZw==" target="_blank ">Instagram</a>
+      <a href="https://www.tiktok.com/@t_bgiacademy" target="_blank">Tik Tok</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const infoBar = document.getElementById("info-bar");
+
+    hamburger.addEventListener("click", () => {
+      infoBar.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
